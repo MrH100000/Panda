@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ITS 362 - Panda Shop </title>
-    <link rel="stylesheet" type="text/css" href="ITS362-lab08-DanielleTurner.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="panda.css">
 </head>
 <body>
     <footer> 
