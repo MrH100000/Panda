@@ -7,6 +7,10 @@ body {
     font-family: sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 nav.navbar {
     width: 100%;
     padding-left: 30px;
@@ -54,8 +58,35 @@ nav.navbar {
 }
 
 
+
+.page {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.navbar, .main, .footer {
+    flex-shrink: 0;
+}
+
 .main {
     margin-left: 8vw;
     margin-right: 8vw;
     padding: 20px;
+    flex-grow: 1;
 }
+
+
+.footer {
+    /* background-image: url(images/background.jpg); */
+    /* background-size: 500px; */
+    background-color: #3a3a3a;
+}
+
+.footer > .footer-content {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    color: #fff;
+}
+

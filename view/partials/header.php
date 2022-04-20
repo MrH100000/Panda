@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div class="page">
 <nav class="navbar">
     <a href="/" class="logo">
       <img src="images/logo-rounded.png" alt="logo">
