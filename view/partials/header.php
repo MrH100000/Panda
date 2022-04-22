@@ -14,10 +14,10 @@
       <img src="images/logo-rounded.png" alt="logo">
     </a>
     <ul class="nav-links">
-      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="index.php">Home</a></li>
       <li class="nav-item"><a href="products.php">Products</a></li>
-      <li class="nav-item"><a href="#">About</a></li>
-      <li class="nav-item"><a href="#">Sign in</a></li>
+      <li class="nav-item"><a href="aboutUs.php">About</a></li>
+      <li class="nav-item"><a href="login.php">Sign in</a></li>
     </ul>
 </nav>
 <div class="main">
