@@ -99,12 +99,19 @@ nav.navbar {
 }
 .productCard 
 {
-    box-shadow: 0 4px 8px 0 #ABC93E;
-    max-width: 300px;
-    margin: auto;   
+    box-shadow: 0 4px 8px 0 #FCBD00;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    display: inline-block;
 }
 
 .productButton{
     color: black;
-    width:fit-content;
+    font-size: large;
+    width:300px;
+    height:35px;
+    background-color: #ABC93E; 
+    border:0;
 }
