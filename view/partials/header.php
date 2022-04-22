@@ -15,7 +15,7 @@
     </a>
     <ul class="nav-links">
       <li class="nav-item"><a href="#">Home</a></li>
-      <li class="nav-item"><a href="#">Products</a></li>
+      <li class="nav-item"><a href="../product.php">Products</a></li>
       <li class="nav-item"><a href="#">About</a></li>
       <li class="nav-item"><a href="#">Sign in</a></li>
     </ul>
