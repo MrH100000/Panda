@@ -97,6 +97,7 @@ nav.navbar {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: center;
 }
 
 .productCard {
@@ -124,14 +125,20 @@ nav.navbar {
 
 .productCard .productFooter {
     flex-shrink: 0;
+    justify-content: center;
+    display: flex;
 }
 
 .productCard .productButton {
 
     color: black;
     font-size: large;
-    width: 100%;
+    width: 80%;
     height: 35px;
     background-color: #ABC93E;
     border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+
 }
