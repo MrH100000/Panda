@@ -1,25 +1,15 @@
-<?php require_once __DIR__ . '/partials/header.php'; 
-    require_once __DIR__. '../model/queryProducts.php';?>
+<?php require_once __DIR__ . '/partials/header.php'; ?>
 <center>
-<h2>All students:</h2>
-	<table id="all">
-		<tr>
-			<th>ProductID</th>
-			<th>Product Name</th>
-			<th>Description</th>
-			<th>Price</th>
-			<th>Product Image</th>
-		</tr>
-		<tr>
-			<?php foreach ($productList as $product): ?>
-				<td><?php echo $product["ProductID"]; ?></td>
-				<td><?php echo $product["Name"]; ?></td>
-				<td><?php echo $product["Description"]; ?></td>
-				<td><?php echo $product["Price"]; ?></td>
-				<td><?php echo $product["ProductImage"]; ?></td>
-		</tr>
-		    <?php endforeach ?>
-    </table>
+<h2>All Products:</h2>
+    <?php foreach ($productList as $product): ?>
+	    <div class='productCard'>
+            <img src="<?php echo $product['ProductImage']?>" alt="<?php echo $product["Name"]; ?>" style="height:150px">
+            <h1><?php echo $product["Name"]; ?> </h1>
+            <p><?php echo "$". number_format($product["Price"]); ?></p>
+            <p><?php echo $product["Description"]; ?> </p>
+            <p> <button class='productButton'> Add to Cart </button></p>
+        </div>
+    <?php endforeach;?>
 </center>
 
-<?php require_once __DIR__ . '/partials/footer.php'; ?>
+<?php require_once __DIR__ . '/partials/footer.php';?>

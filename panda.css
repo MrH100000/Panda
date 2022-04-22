@@ -7,7 +7,8 @@ body {
     font-family: sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -66,7 +67,9 @@ nav.navbar {
     align-items: stretch;
 }
 
-.navbar, .main, .footer {
+.navbar,
+.main,
+.footer {
     flex-shrink: 0;
 }
 
@@ -84,9 +87,24 @@ nav.navbar {
     background-color: #3a3a3a;
 }
 
-.footer > .footer-content {
+.footer>.footer-content {
     margin-left: 8vw;
     margin-right: 8vw;
     color: #fff;
 }
 
+.productTable {
+    border-collapse: collapse;
+    text-align:center;
+}
+.productCard 
+{
+    box-shadow: 0 4px 8px 0 #ABC93E;
+    max-width: 300px;
+    margin: auto;   
+}
+
+.productButton{
+    color: black;
+    width:fit-content;
+}
