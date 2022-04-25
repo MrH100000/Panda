@@ -9,4 +9,9 @@
         }
         return $db;
     }
+    session_start();
+    $_SESSION['username']=null;
+    $_SESSION['loggedin']=false;
+    $_SESSION['type']=null;
+    $user=false;
 ?>

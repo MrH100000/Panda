@@ -13,8 +13,8 @@
         <input type="submit" value="Login">
     </form>
     <h3>Hint:</h3>
-    <p>Admin Username: admin Password: admin </p>
-    <p>Regular Username: notAdmin Password: notAdmin </p>
+    <p>Admin Username: admin Password: panda </p>
+    <p>Regular Username: red Password: panda </p>
 
 <?php if (isset($error_message)): ?>
     <div class="errorMessage">

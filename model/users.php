@@ -33,19 +33,24 @@ class Users extends Model {
             $query = $this->DB()->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
             $query->execute(array($username, $password));
             $userInfo= $query->fetch();
-            $type=4;
             if($userInfo >= 1)
             {
-                if($userInfo['IsAdmin']==1)
+                $_SESSION['username']=$username;
+                $_SESSION['loggedin']=true;
+                $_SESSION['firstName']=$userInfo['FirstName'];
+
+                if($userInfo['IsAdmin']===1)
                 {
-                    $type=1;
+                    $_SESSION['type']=1;
+                    return true;
                 }
-                elseif($userInfo['IsAdmin']==0)
+                elseif($userInfo['IsAdmin']===0)
                 {
-                    $type=2;
+                    $_SESSION['type']=2;
+                    return true;
                 }
             }
-            return $type;
+            return false;
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
