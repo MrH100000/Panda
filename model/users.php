@@ -32,7 +32,20 @@ class Users extends Model {
         try {
             $query = $this->DB()->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
             $query->execute(array($username, $password));
-            return $query->fetch();
+            $userInfo= $query->fetch();
+            $type=4;
+            if($userInfo >= 1)
+            {
+                if($userInfo['IsAdmin']==1)
+                {
+                    $type=1;
+                }
+                elseif($userInfo['IsAdmin']==0)
+                {
+                    $type=2;
+                }
+            }
+            return $type;
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
