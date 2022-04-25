@@ -1,4 +1,5 @@
 <?php
+session_start();
 // TODO: Store user login in session
 require_once __DIR__. '/model/users.php';
 $users = new users();
@@ -15,11 +16,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 if(isset($_POST['logout']))
 {
-    $_SESSION['username']=null;
-    $_SESSION['loggedin']=false;
-    $_SESSION['type']=null;
-    $_SESSION['firstName']=null;
-    $user=false;
+    if(isset($_SESSION))
+    {
+        $_SESSION['username']=null;
+        $_SESSION['loggedIn']=false;
+        $_SESSION['type']=null;
+        $_SESSION['firstName']=null;
+        $user=false;
+        session_destroy();
+    }
+    
 }
 require_once __DIR__ . '/view/login.php';
 ?>

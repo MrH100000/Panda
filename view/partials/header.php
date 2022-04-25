@@ -18,7 +18,13 @@
       <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/products')) { print('active'); } ?>" href="products.php">Products</a></li>
       <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/aboutus')) { print('active'); } ?>" href="aboutUs.php">About</a></li>
       <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/cart')) { print('active'); } ?>" href="cart.php">Cart</a></li>
-      <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/login')) { print('active'); } ?>" href="login.php">Sign in</a></li>
+      <?php if(isset($_SESSION['loggedIn']))
+      { 
+      }
+      else{?>
+        <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/login')) { print('active'); } ?>" href="login.php">Sign in</a></li>
+      <?php 
+      }?>
       <?php if(isset($_SESSION['type']) && $_SESSION['type']===1)
       { ?>
         <li class="nav-item"><a class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/editProducts.php')) { print('active'); } ?>" href="editProducts.php">Edit Products</a></li>

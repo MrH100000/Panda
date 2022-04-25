@@ -1,4 +1,6 @@
 # Panda
+problems:
+session info erased whenever redirected after logging in 
 
 very important panda project!
 

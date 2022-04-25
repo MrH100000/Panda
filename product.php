@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once __DIR__. '/model/products.php';
 $products = new Products();
 if (isset($_GET['id'])) {

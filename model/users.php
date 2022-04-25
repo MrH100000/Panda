@@ -36,7 +36,7 @@ class Users extends Model {
             if($userInfo >= 1)
             {
                 $_SESSION['username']=$username;
-                $_SESSION['loggedin']=true;
+                $_SESSION['loggedIn']=true;
                 $_SESSION['firstName']=$userInfo['FirstName'];
 
                 if($userInfo['IsAdmin']===1)
