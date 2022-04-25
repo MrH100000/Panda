@@ -1,8 +1,13 @@
 # Panda
-problems:
-session info erased whenever redirected after logging in 
 
 very important panda project!
+need:
+        David:
+                format login and reigster to look decent
+        Danielle:
+                finish edit products once i understand what david is doing with the products upon being clicked
+                
+
 
 requirements:
     1. Develop an online webstore using PHP, Apache web server, and MySQL (or       

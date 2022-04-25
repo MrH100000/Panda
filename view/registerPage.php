@@ -1,11 +1,13 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
-<?php if(isset($_SESSION['type']) && $_SESSION['type']===5)
-      { ?>
-            <p> Registered successfully, Please log in: </p>
-        <?php
-      }?>
-    <form action="login.php" method="post">
-        <label> Login </label>
+
+    <form action="register.php" method="post">
+        <label> Enter information: </label>
+        <br>
+        <label>First Name:</label>
+        <input type="text" name="firstName" required>
+        <br>
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required>
         <br>
         <label>Username:</label>
         <input type="text" name="username" required>
@@ -13,13 +15,7 @@
         <label>Password:</label>
         <input type="password" name="password" required>
         <br>
-        <input type="submit" value="Login">
-    </form>
-    <h3>Hint:</h3>
-    <p>Admin Username: admin Password: panda </p>
-    <p>Regular Username: red Password: panda </p>
-    <form action="register.php" method="post">
-        <input type="submit" value="Register">
+        <input type="submit" value="register">
     </form>
 <?php if (isset($error_message)): ?>
     <div class="errorMessage">
