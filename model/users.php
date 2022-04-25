@@ -1,7 +1,7 @@
 <?php
 require_once("database.php");
 require_once("Model.php");
-class Products extends Model {
+class Users extends Model {
     static $db = null;
 
     public function __construct() {
@@ -12,7 +12,7 @@ class Products extends Model {
 
     public function getAll() {
         try {
-            return $this->DB()->query("SELECT * FROM products order by productID")->fetchAll();
+            return $this->DB()->query("SELECT * FROM users order by UserID")->fetchAll();
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
@@ -20,8 +20,18 @@ class Products extends Model {
 
     public function getOne($id) {
         try {
-            $query = $this->DB()->prepare('SELECT * FROM products WHERE ProductID = ?');
+            $query = $this->DB()->prepare('SELECT * FROM users WHERE UserID = ?');
             $query->execute(array($id));
+            return $query->fetch();
+        } catch(PDOException $e) {
+            handle_error($e->getMessage());
+        }
+    }
+
+    public function getOneByUsernamePassword($username, $password) {
+        try {
+            $query = $this->DB()->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
+            $query->execute(array($username, $password));
             return $query->fetch();
         } catch(PDOException $e) {
             handle_error($e->getMessage());

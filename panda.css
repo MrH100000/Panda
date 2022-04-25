@@ -12,6 +12,13 @@ body {
     height: 100%;
 }
 
+.errorMessage {
+    padding: 20px;
+    background-color: #f25858;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
 nav.navbar {
     width: 100%;
     padding-left: 30px;
