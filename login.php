@@ -9,22 +9,22 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($user === false) {
         $error_message = "Username or password incorrect";
     } else {
-        require_once __DIR__ . '/view/home.php';
-        exit;
+        header('Location: index.php');
+        exit();
     }
 }
-if(isset($_POST['logout']))
-{
-    if(isset($_SESSION))
-    {
-        $_SESSION['username']=null;
-        $_SESSION['loggedIn']=false;
-        $_SESSION['type']=null;
-        $_SESSION['firstName']=null;
-        $user=false;
-        session_destroy();
+
+if(isset($_POST['logout'])) {
+    if(session_id()) {
+        unset($_SESSION['username']);
+        unset($_SESSION['loggedIn']);
+        unset($_SESSION['type']);
+        unset($_SESSION['firstName']);
+        unset($user);
     }
-    
+    header('Location: index.php');
+    exit();
 }
+
 require_once __DIR__ . '/view/login.php';
 ?>

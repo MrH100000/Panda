@@ -234,3 +234,39 @@ nav.navbar {
     display: inline-block;
     vertical-align: top;
 }
+
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-content .footer-left {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.footer-content .footer-right {
+    flex-shrink: 0;
+}
+
+.footer-content .footer-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.footer-content .logout-button {
+    width: 95px;
+    height: 35px;
+    border: none;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.footer-content .logout-button:hover {
+    background-color: #cecece;
+}
+
