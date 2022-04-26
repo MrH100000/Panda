@@ -18,5 +18,5 @@ if (isset($_POST['delete'])) {
         exit;
     }
 }
-require_once __DIR__ . '/view/productChange.php';
+require_once __DIR__ . '/view/product_change.php';
 ?>

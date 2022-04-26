@@ -111,7 +111,6 @@ nav.navbar {
 }
 
 .productCard {
-    margin: 10px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     display: flex;
@@ -121,6 +120,7 @@ nav.navbar {
 }
 
 .productLink {
+    margin: 10px;
     flex: 0 0 250px;
     text-decoration: none;
     color: inherit;
@@ -146,7 +146,6 @@ nav.navbar {
 }
 
 .productCard .productButton {
-
     color: black;
     font-size: large;
     width: 80%;
@@ -156,7 +155,11 @@ nav.navbar {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
+    cursor: pointer;
+}
 
+.productCard .productButton:hover { 
+    background-color: #98b338;
 }
   
 .column {

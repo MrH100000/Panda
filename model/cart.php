@@ -36,7 +36,11 @@ class Cart {
     public function add($product, $quantity) {
         $_SESSION['cart_products_total'] += $product['Price'];
         $_SESSION['cart_products_count'] += $quantity;
-        $_SESSION['cart_products'][$product['ProductID']] = array('product' => $product, 'quantity' => $quantity);
+        if (isset($_SESSION['cart_products'][$product['ProductID']])) {
+            $_SESSION['cart_products'][$product['ProductID']]['quantity'] += $quantity;
+        } else {
+            $_SESSION['cart_products'][$product['ProductID']] = array('product' => $product, 'quantity' => $quantity);
+        }
     }
 
     public function remove($productId) {

@@ -12,9 +12,11 @@
                     <p><?php echo "$". number_format($product["Price"]); ?></p>
                     <p><?php echo $product["Description"]; ?> </p>
                 </div>
-                <div class="productFooter">
-                    <button class="productButton">Add to Cart</button>
-                </div>
+                <form class="productFooter" action="cart.php?add" method="post">
+                    <input type="hidden" name="product_id" value="<?php echo $product["ProductID"]; ?>">
+                    <input type="hidden" class="quantitySelector" name="quantity" value="1">
+                    <input class="productButton" type="submit" value="Add to Cart">
+                </form>
             </div>
         </a>
     <?php endforeach;?>
