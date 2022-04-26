@@ -17,5 +17,5 @@
             $error_message = "Product is already created. Please add a new product";
         }
     }
-    require_once __DIR__ . '/view/editProduct.php'; 
+    require_once __DIR__ . '/view/edit_product.php'; 
 ?>

@@ -114,13 +114,14 @@ nav.navbar {
     margin: 10px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
 }
 
 .productLink {
     flex: 0 0 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
     text-decoration: none;
     color: inherit;
 }
@@ -194,8 +195,6 @@ nav.navbar {
     height: 35px;
     background-color: #ABC93E;
     border: 0;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 15px;
     cursor: pointer;
 }
@@ -224,4 +223,11 @@ nav.navbar {
     margin-right: auto;
     margin-bottom: 15px;
     cursor: pointer;
+}
+
+.product-column .quantitySelector {
+    height: 35px;
+    width: 60px;
+    display: inline-block;
+    vertical-align: top;
 }

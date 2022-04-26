@@ -8,7 +8,7 @@ need:
                 finish edit products once i understand what david is doing with the products upon being clicked
                 
 
-
+```
 requirements:
     1. Develop an online webstore using PHP, Apache web server, and MySQL (or       
         MariaDB).Suggestion: Use the XAMPP distribution.
@@ -32,7 +32,7 @@ requirements:
         the items purchased and a total amount. The total must include sales tax and shipping charges.
 !    13. The administrator must be able to search sales by username and/or product.
     14. Structure the code using the MVC pattern.
-    
+```
     You may work in a group for this project, however there is no requirement that this should be done in a
     group. The maximum size of a group is 3 people. You are required to present this project at the end of
     the semester (exact date of presentation TBA). When turning in this project, you should turn in a
