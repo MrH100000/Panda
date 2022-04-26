@@ -1,17 +1,28 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
-<?php foreach ($productList as $product): ?>
-        <a class="productLink" href="product.php?id=<?php echo($product['product']['ProductID']); ?>">
-            <div class="productCard">
-                <img src="<?php echo $product['product']['ProductImage']?>" alt="<?php echo $product['product']["Name"]; ?>">
-                <div class="productDescription">
-                    <h2><?php echo $product['product']["Name"]; ?> </h2>
-                    <p><?php echo "$". number_format($product['product']["Price"]); ?></p>
-                    <p><?php echo $product['quantity']; ?> </p>
-                    <p><?php echo $product['product']["Description"]; ?> </p>
-                </div>
-            </div>
-        </a>
-    <?php endforeach;?>
+<div class="cart-area">
+    <div class="cart-card">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Price Each</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($productList as $product): ?>
+                    <tr>
+                        <td><img class="cart-image" src="<?= $product['product']['ProductImage']; ?>" alt="<?= $product['product']["Name"]; ?>"></td>
+                        <td><?= $product['product']["Name"]; ?></td>
+                        <td><?= "$" . number_format($product['product']["Price"]); ?></td>
+                        <td><?= number_format($product['quantity']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 <?php require_once __DIR__ . '/partials/footer.php';?>
