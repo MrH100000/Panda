@@ -4,7 +4,7 @@
     $orders = new Orders();
     if(isset($_POST['submit']))
     {
-        $done=$orders->addToCart($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country']);
+        $done=$orders->addToOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment']);
         if($done===true)
         {
             echo "success";

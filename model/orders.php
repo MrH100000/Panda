@@ -9,13 +9,12 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-
-    public function addToCart($street, $city, $state, $zipCode, $country )
+    public function addToOrder($street, $city, $state, $zipCode, $country, $paymentType )
     {
         //prepare sql statement to add to cart
         $id=$_SESSION['userID'];
-        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode)
-        VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode)');
+        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType)
+        VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType)');
         //try to add product
         try{
             //binds values while executing
@@ -25,7 +24,8 @@ class Orders extends Model {
                     ':state' => $state,
                     ':city' => $city,
                     ':country' => $country,
-                    ':zipCode' => $zipCode
+                    ':zipCode' => $zipCode,
+                    ':paymentType' => $paymentType
             ]);
             //close query
             $query->closeCursor();
@@ -58,7 +58,7 @@ class Orders extends Model {
             handle_error($e->getMessage());
         }
     }
-    
+
     public function searchByUsername($id)
     {
         try {

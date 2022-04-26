@@ -23,6 +23,15 @@
         <label>Country:</label>
         <input type="text" name="country" required>
         <br>
-        <input type="submit" name="submit" value="checkout">
+        <label>Select Payment type:</label>
+        <select name="payment">
+            <option value="Credit Card"> Credit Card </option>
+            <option value="Debit Card"> Debit Card </option>
+            <option value="Cash Upon Delivery"> Cash upon delivery </option>
+            <option value="Check Upon Delivery"> Check upon delivery </option>
+            <option value="Doge Coin"> Doge Coin. </option>
+        </select>
+        <br>
+        <input type="submit" name="submit" value="Checkout">
     </form>
 <?php require_once __DIR__ . '/partials/footer.php'; ?>
