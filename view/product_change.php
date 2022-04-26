@@ -1,11 +1,19 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
 <div class="columns">
     <div class="column product-column">
-        <h1><?php echo $product["Name"]; ?></h1>
-        <p><?php echo "$". number_format($product["Price"]); ?></p>
-        <p><?php echo $product["Description"]; ?> </p>
-        <!-- <button class="productButton">Add to Cart</button> -->
         <form action="product_change.php" method="post">
+            <label> Product Name: </label>
+            <p><input type="text" name="name" value="<?php echo $product["Name"]; ?>"></p>
+            <br>
+            <label> Price: </label>
+            <p><input type="text" name="price" value="<?php echo $product["Price"]; ?>"></p>
+            <br>
+            <label> Description: </label>
+            <p><input type="text" name="description" value="<?php echo $product["Description"]; ?>"></p>
+            <br>
+            <label> Image Source: </label>
+            <p><input type="text" name="productImage" value="<?php echo $product["ProductImage"]; ?>"></p>
+            <br>
             <input type="hidden" name="edit">
             <input type="hidden" name="id" value="<?php echo $product['ProductID']?>">
             <input class="editButton" type="submit" value="Edit Item">

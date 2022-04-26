@@ -74,5 +74,43 @@ class Products extends Model {
             return false;
         }
     }
+    public function editProduct($id, $name, $description, $price, $productImage )
+    {
+        //prepare SQL query to see if the product is already in the db
+        $queryProd = $this->DB()->prepare('SELECT * FROM products WHERE productID = ?');
+        $queryProd->execute(array($id));
+        $productInfo= $queryProd->fetch();
+        //if productInfo is not zero then the product is in the db already
+        if($productInfo>0)
+        {
+            //prepare sql statement to add product
+            $query = $this->DB()->prepare('UPDATE products SET Name= :name, Description= :description, Price= :price, ProductImage =:productImage
+                 WHERE productID = :id');
+            //try to add product
+            try{
+                //binds values while executing
+                $query->execute([
+                        ':name' => $name,
+                        ':description' => $description,
+                        ':price' => $price,
+                        ':productImage' => $productImage,
+                        ':id' => $id
+                ]);
+                //close query
+                $query->closeCursor();
+                return true;
+            //if it doesnt work, display error
+            }catch(PDOException $e) {
+                handle_error($e->getMessage());
+                exit();
+            }
+            $queryProd->closeCursor();
+        }
+        //if product already used return false to show error message
+        else
+        {
+            return false;
+        }
+    }
 }
 ?>

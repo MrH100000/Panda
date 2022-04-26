@@ -17,6 +17,20 @@ if (isset($_POST['delete'])) {
     }
 }
 
+if(isset($_POST['edit'])){
+    if(isset($_POST['id'])){
+        $product = $products->editProduct($_POST['id'], $_POST['name'], $_POST['description'], $_POST['price'], $_POST['productImage'] );
+        if ($product === true) {
+            header('Location: edit_products.php');
+            exit();
+        } else {
+            handle_error("something went wrong");
+        }
+    } else {
+        handle_error("Invalid ID passed to delete request");
+    }
+}
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $product = $products->getOne($_GET['id']);
