@@ -234,3 +234,10 @@ nav.navbar {
     display: inline-block;
     vertical-align: top;
 }
+
+.faqs dt
+{
+    font-size: large;
+    color: #ABC93E;
+    font-weight: bold;
+}
