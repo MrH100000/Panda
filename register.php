@@ -5,16 +5,10 @@
     //used to make sure function actually works
     $done="false";
     //makes sure everything is set from post
-    if(isset($_POST['firstName']) && isset($_POST['lastName'])
-        && isset($_POST['username']) && isset($_POST['password']))
+    if(isset($_POST['submit']))
     {
-        //grabs all input information from the post request
-        $firstName=filter_input(INPUT_POST, 'firstName');
-        $lastName=filter_input(INPUT_POST, 'lastName');
-        $username=filter_input(INPUT_POST, 'username');
-        $password=filter_input(INPUT_POST, 'password');
         //calls the createUser function 
-        $done=$users->createUser($firstName, $lastName, $username, $password );
+        $done=$users->createUser($_POST['firstName'], $_POST['lastName'], $_POST['username'], $_POST['password'] );
         //if sucessfull then user is redirected to login
         if($done===true)
         {

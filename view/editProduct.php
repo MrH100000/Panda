@@ -3,8 +3,8 @@
     <h1>Edit Products:</h1>
 </center>
 <div class="productCards">
-    <?php foreach ($productList as $product): ?>
-        <a class="productLink" href="product.php?id=<?php echo($product['ProductID']); ?>">
+<?php foreach ($productList as $product): ?>
+        <a class="productLink" href="productChange.php?id=<?php echo($product['ProductID']); ?>">
             <div class="productCard">
                 <img src="<?php echo $product['ProductImage']?>" alt="<?php echo $product["Name"]; ?>">
                 <div class="productDescription">
@@ -13,13 +13,36 @@
                     <p><?php echo $product["Description"]; ?> </p>
                 </div>
                 <div class="productFooter">
-                    <button class="editButton">Edit Item</button>
-                    <br>
-                    <button class="deleteButton">Delete Item</button>
+                    <button class="productButton">Click to Edit / Delete</button>
                 </div>
             </div>
         </a>
     <?php endforeach;?>
+    <div class="productLink">
+        <div class="productCard">
+            <form action="editProducts.php" method="post">
+                <img src="images/addProduct.png" alt="add product">
+                <div class="productDescription">
+                    <label> Enter Product Information: </label>
+                    <br>
+                    <label>Product Name:</label>
+                    <input type="text" name="name" required>
+                    <br>
+                    <label>Product Price:</label>
+                    <input type="number" name="price" required>
+                    <br>
+                    <label>Product Description:</label>
+                    <input type="text" name="description" required>
+                    <br>
+                    <label>Product Image Source:</label>
+                    <input type="text" name="image" required>
+                </div>
+                <div class="productFooter">
+                    <input class="productButton" type="submit" name="submit" value="Add Product">
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <?php require_once __DIR__ . '/partials/footer.php';?>
