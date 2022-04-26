@@ -29,9 +29,8 @@ class Products extends Model {
     }
     public function deleteProduct($id){
         try {
-            $query = $this->DB()->prepare('DELETE * FROM products WHERE ProductID = ?');
+            $query = $this->DB()->prepare('DELETE FROM products WHERE ProductID = ?');
             $query->execute(array($id));
-            $query->fetch();
             return true;
         } catch(PDOException $e) {
             handle_error($e->getMessage());

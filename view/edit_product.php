@@ -20,7 +20,7 @@
     <?php endforeach;?>
     <div class="productLink">
         <div class="productCard">
-            <form action="editProducts.php" method="post">
+            <form action="edit_products.php" method="post">
                 <img src="images/addProduct.png" alt="add product">
                 <div class="productDescription">
                     <label> Enter Product Information: </label>
@@ -44,5 +44,10 @@
         </div>
     </div>
 </div>
-
+<?php if (isset($error_message)): ?>
+    <div class="errorMessage">
+        <strong>Error:</strong>
+        <?php echo $error_message; ?>
+    </div>
+<?php endif; ?>
 <?php require_once __DIR__ . '/partials/footer.php';?>
