@@ -235,9 +235,82 @@ nav.navbar {
     vertical-align: top;
 }
 
-.faqs dt
-{
+.faqs dt {
     font-size: large;
     color: #ABC93E;
     font-weight: bold;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-content .footer-left {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.footer-content .footer-right {
+    flex-shrink: 0;
+}
+
+.footer-content .footer-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.footer-content .logout-button {
+    width: 95px;
+    height: 35px;
+    border: none;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.footer-content .logout-button:hover {
+    background-color: #cecece;
+}
+
+.login-area {
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    padding: 20px;
+    flex-basis: 500px;
+}
+
+.login-fieldgroup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login-fieldgroup .login-label {
+    display: block;
+}
+
+.login-fieldgroup .login-textfield {
+    width: 100%;
+    height: 30px;
+
+}
+
+.login-button {
+    width: 80px;
+    height: 30px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #474747;
 }
