@@ -43,8 +43,14 @@ class Cart {
         }
     }
 
-    public function remove($productId) {
-        unset($_SESSION['cart_products'][$productId]);
+    public function delete($productId) {
+        if (isset($_SESSION['cart_products'][$productId])) {
+            $_SESSION['cart_products_total'] -= $_SESSION['cart_products'][$productId]['product']['Price'];
+            $_SESSION['cart_products_count'] -= $_SESSION['cart_products'][$productId]['quantity'];
+            unset($_SESSION['cart_products'][$productId]);
+        } else {
+            return false;
+        }
     }
 
     public function destroy(){ 

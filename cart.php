@@ -6,7 +6,7 @@ $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
 $products = new Products();
 $cart = new Cart();
-if (isset($_GET['add']) && isset($_POST['product_id']) && isset($_POST['quantity'])) {
+if (isset($_POST['add']) && isset($_POST['product_id']) && isset($_POST['quantity'])) {
     if (intval($_POST['quantity']) < 1 || intval($_POST['quantity']) > 1000000) {
         handle_error("Invalid quantity");
     }
@@ -14,8 +14,11 @@ if (isset($_GET['add']) && isset($_POST['product_id']) && isset($_POST['quantity
     $cart->add($product, intval($_POST['quantity']));
     header('Location: products.php');
     exit();
-} else {
-    $productList = $cart->getAll();
-    require_once __DIR__ . '/view/cart.php';
+} else if (isset($_POST['delete']) && isset($_POST['product_id'])) {
+    $cart->delete($_POST['product_id']);
 }
+
+$productList = $cart->getAll();
+$cartTotal = $cart->getTotalValue();
+require_once __DIR__ . '/view/cart.php';
 ?>

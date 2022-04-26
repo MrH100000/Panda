@@ -12,7 +12,8 @@
                     <p><?php echo "$". number_format($product["Price"]); ?></p>
                     <p><?php echo $product["Description"]; ?> </p>
                 </div>
-                <form class="productFooter" action="cart.php?add" method="post">
+                <form class="productFooter" action="cart.php" method="post">
+                    <input type="hidden" name="add">
                     <input type="hidden" name="product_id" value="<?php echo $product["ProductID"]; ?>">
                     <input type="hidden" class="quantitySelector" name="quantity" value="1">
                     <input class="productButton" type="submit" value="Add to Cart">
