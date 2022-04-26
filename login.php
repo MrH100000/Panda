@@ -20,6 +20,8 @@ if(isset($_POST['logout'])) {
         unset($_SESSION['loggedIn']);
         unset($_SESSION['type']);
         unset($_SESSION['firstName']);
+        unset($_SESSION['lastName']);
+        unset($_SESSION['userID']);
         unset($user);
     }
     header('Location: index.php');
