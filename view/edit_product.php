@@ -4,7 +4,7 @@
 </center>
 <div class="productCards">
 <?php foreach ($productList as $product): ?>
-        <a class="productLink" href="productChange.php?id=<?php echo($product['ProductID']); ?>">
+        <a class="productLink" href="product_change.php?id=<?php echo($product['ProductID']); ?>">
             <div class="productCard">
                 <img src="<?php echo $product['ProductImage']?>" alt="<?php echo $product["Name"]; ?>">
                 <div class="productDescription">
@@ -20,7 +20,7 @@
     <?php endforeach;?>
     <div class="productLink">
         <div class="productCard">
-            <form action="editProducts.php" method="post">
+            <form action="edit_products.php" method="post">
                 <img src="images/addProduct.png" alt="add product">
                 <div class="productDescription">
                     <label> Enter Product Information: </label>

@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $product = $products->getOne($_GET['id']);
     $id=$_GET['id'];
 } else {
-    header('Location: editProducts.php');
+    header('Location: edit_products.php');
     exit();
 }
 if (isset($_POST['delete'])) {
@@ -15,9 +15,9 @@ if (isset($_POST['delete'])) {
     if ($products === false) {
         $error_message = "Username or password incorrect";
     } else {
-        header('Location: editProducts.php');
+        header('Location: edit_products.php');
         exit;
     }
 }
-require_once __DIR__ . '/view/productChange.php';
+require_once __DIR__ . '/view/product_change.php';
 ?>

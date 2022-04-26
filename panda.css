@@ -146,7 +146,6 @@ nav.navbar {
 }
 
 .productCard .productButton {
-
     color: black;
     font-size: large;
     width: 80%;
@@ -156,7 +155,11 @@ nav.navbar {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
+    cursor: pointer;
+}
 
+.productCard .productButton:hover { 
+    background-color: #98b338;
 }
   
 .column {

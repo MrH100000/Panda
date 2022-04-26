@@ -4,7 +4,6 @@
         <h1><?php echo $product["Name"]; ?></h1>
         <p><?php echo "$". number_format($product["Price"]); ?></p>
         <p><?php echo $product["Description"]; ?> </p>
-        <!-- <button class="productButton">Add to Cart</button> -->
         <form action="cart.php?add" method="post">
             <input type="hidden" name="product_id" value="<?php echo $product["ProductID"]; ?>">
             <input class="addToCartButton" type="submit" value="Add to Cart">
