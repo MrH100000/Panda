@@ -41,6 +41,8 @@ class Users extends Model {
                 $_SESSION['username']=$username;
                 $_SESSION['loggedIn']=true;
                 $_SESSION['firstName']=$userInfo['FirstName'];
+                $_SESSION['lastName']=$userInfo['LastName'];
+                $_SESSION['userID']=$userInfo['UserID'];
                 //if user is admin they are given type of 1
                 if($userInfo['IsAdmin']===1)
                 {
