@@ -5,8 +5,10 @@
         <p><?php echo "$". number_format($product["Price"]); ?></p>
         <p><?php echo $product["Description"]; ?> </p>
         <!-- <button class="productButton">Add to Cart</button> -->
-        <form action="product.php?test" method="get">
+        <form action="cart.php?add" method="post">
+            <input type="hidden" name="product_id" value="<?php echo $product["ProductID"]; ?>">
             <input class="addToCartButton" type="submit" value="Add to Cart">
+            <input type="number" class="quantitySelector" name="quantity" value="1">
         </form>
     </div>
     <div class="column image-column">
