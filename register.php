@@ -28,5 +28,5 @@
         }
     }
     //sends user to register page 
-    require_once __DIR__ . '/view/registerPage.php';
+    require_once __DIR__ . '/view/register_page.php';
 ?>
