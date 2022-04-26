@@ -5,10 +5,15 @@
         <p><?php echo "$". number_format($product["Price"]); ?></p>
         <p><?php echo $product["Description"]; ?> </p>
         <!-- <button class="productButton">Add to Cart</button> -->
-        <form action="productChange.php" method="get">
-            <input class="editButton" type="submit" name="edit" value="Edit Item">
-            <br>
-            <input class="deleteButton" type="submit" name="delete" value="Delete Item">
+        <form action="product_change.php" method="post">
+            <input type="hidden" name="edit">
+            <input type="hidden" name="id" value="<?php echo $product['ProductID']?>">
+            <input class="editButton" type="submit" value="Edit Item">
+        </form>
+        <form action="product_change.php" method="post">
+            <input type="hidden" name="delete">
+            <input type="hidden" name="id" value="<?php echo $product['ProductID']?>">
+            <input class="deleteButton" type="submit" value="Delete Item">
         </form>
     </div>
     <div class="column image-column">
