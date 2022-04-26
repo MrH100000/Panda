@@ -237,7 +237,7 @@ nav.navbar {
 
 .faqs dt {
     font-size: large;
-    color: #ABC93E;
+    color: #E45D34;
     font-weight: bold;
 }
 
@@ -313,4 +313,44 @@ nav.navbar {
 
 .login-button:hover {
     background-color: #474747;
+}
+
+.cart-area {
+    display: flex;
+    justify-content: center;
+}
+
+.cart-card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    flex-basis: 900px;
+    padding: 20px;
+}
+
+.cart-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cart-table td, th {
+    border-bottom: 1px solid #000000;
+    padding: 3px;
+}
+
+.cart-table th {
+    text-align: left;
+}
+
+.cart-table td {
+    padding-top: 8px;
+}
+
+.cart-table tr:last-child > td {
+    border-bottom: none;
+}
+
+.cart-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
 }

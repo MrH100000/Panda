@@ -30,7 +30,7 @@ $cart = new Cart();
                 <?php if ($cart->getProductCount() > 0): ?>
                     <li class="nav-item"><a
                             class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/cart')) { print('active'); } ?>"
-                            href="cart.php">Cart (<?php echo($cart->getProductCount()) ?>)</a></li>
+                            href="cart.php">Cart (<?= number_format(($cart->getProductCount())) ?>)</a></li>
                 <?php else: ?>
                     <li class="nav-item"><a
                             class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/cart')) { print('active'); } ?>"
