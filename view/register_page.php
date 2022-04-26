@@ -15,7 +15,7 @@
         <label>Password:</label>
         <input type="password" name="password" required>
         <br>
-        <input type="submit" value="register">
+        <input type="submit" name="submit" value="register">
     </form>
 <?php if (isset($error_message)): ?>
     <div class="errorMessage">

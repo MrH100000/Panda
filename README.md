@@ -3,7 +3,7 @@
 very important panda project!
 need:
         David:
-                format login and reigster to look decent
+                format login and register to look decent
         Danielle:
                 finish edit products once i understand what david is doing with the products upon being clicked
                 
@@ -21,7 +21,7 @@ requirements:
 !    6. The user must be able to checkout and complete a purchase.
 !    7. The system must be able to log the sales transaction into the database. 
         Remember you must save all the items purchased as well as the sales transaction.
-!    8. The user must be able to create an account for your site before making a 
+    8. The user must be able to create an account for your site before making a 
         purchase.
 !    9. The administrator of the site must be able to add, edit and delete products 
         from the database.

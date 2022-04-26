@@ -158,32 +158,6 @@ nav.navbar {
     margin-bottom: 15px;
 
 }
-.productCard .editButton {
-
-    color: black;
-    font-size: large;
-    width: 80%;
-    height: 35px;
-    background-color: #FCBD00;
-    border: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-
-}
-.productCard .deleteButton {
-
-    color: black;
-    font-size: large;
-    width: 80%;
-    height: 35px;
-    background-color: red;
-    border: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-
-}
   
 .column {
     flex-shrink: 0;
@@ -221,6 +195,32 @@ nav.navbar {
     height: 35px;
     background-color: #ABC93E;
     border: 0;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.product-column .deleteButton {
+    color: black;
+    font-size: large;
+    width: 200px;
+    height: 35px;
+    background-color: red;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.product-column .editButton {
+    color: black;
+    font-size: large;
+    width: 200px;
+    height: 35px;
+    background-color: #FCBD00;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px;
     cursor: pointer;
 }
