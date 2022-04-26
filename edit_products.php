@@ -8,7 +8,9 @@
         $done=$products->createProduct($_POST['name'], $_POST['description'], $_POST['price'], 'images/'.$_POST['image']);
         if($done===true)
         {
-            require_once __DIR__ . '/view/editProduct.php';
+
+            header('location: edit_products.php');
+            $_POST['submit']=false;
             exit;
         }
         //if not then error message will show
