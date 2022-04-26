@@ -1,26 +1,50 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
-<?php if(isset($_SESSION['type']) && $_SESSION['type']===5)
-      { ?>
-            <p> Registered successfully, Please log in: </p>
-        <?php
-      }?>
-    <form action="login.php" method="post">
-        <label> Login </label>
-        <br>
-        <label>Username:</label>
-        <input type="text" name="username" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <input type="submit" value="Login">
-    </form>
-    <h3>Hint:</h3>
-    <p>Admin Username: admin Password: panda </p>
-    <p>Regular Username: red Password: panda </p>
-    <form action="register.php" method="post">
-        <input type="submit" value="Register">
-    </form>
+<?php if(isset($_SESSION['type']) && $_SESSION['type']===5): ?>
+    <p> Registered successfully, Please log in: </p>
+<?php endif; ?>
+
+<div class="login-area">
+    <div class="login-card">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+            <div class="login-fieldgroup">
+                <label class="login-label" for="username_field">Username:</label>
+                <input class="login-textfield" type="text" name="username" id="username_field" required>
+            </div>
+            <div class="login-fieldgroup">
+                <label class="login-label" for="password_field">Password:</label>
+                <input class="login-textfield" type="password" name="password" id="password_field" required>
+            </div>
+            <br>
+            <input class="login-button" type="submit" value="Login">
+        </form>
+        <hr/>
+        <h3>Hint:</h3>
+        <p>
+            <strong>Admin:</strong>
+            <br>
+            Username: admin
+            <br>
+            Password: panda
+        </p>
+        <p>
+            <strong>User:</strong>
+            <br>
+            Username: red
+            <br>
+            Password: panda
+        </p>
+        <form action="register.php" method="post">
+            <input class="login-button" type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
 <?php if (isset($error_message)): ?>
     <div class="errorMessage">
         <strong>Error:</strong>
