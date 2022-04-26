@@ -9,7 +9,7 @@
         <input type="text" name="lastName" value="<?php echo $_SESSION["lastName"];?>" required>
         <br>
         <label>Street Adress:</label>
-        <input type="text" name="address" required>
+        <input type="text" name="street" required>
         <br>
         <label>City:</label>
         <input type="text" name="city" required>
@@ -21,7 +21,7 @@
         <input type="text" name="zipCode" required>
         <br>
         <label>Country:</label>
-        <input type="text" name="state" required>
+        <input type="text" name="country" required>
         <br>
         <input type="submit" name="submit" value="checkout">
     </form>
