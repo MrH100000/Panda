@@ -25,8 +25,11 @@
         <dt>Do you sell a variety of Bamboo?</dt>
             <dd>As you learned above, panda's require a variety of bamboo to stay healthy. Our bamboo bundles are crafted with a variety of bamboo types. This makes your life easier because you don't have to worry about whether you panda is getting a good variety or not.</dd>
         <br>
-        <dt>What do i do if my Panda eats somehting other than bamboo?</dt>
+        <dt>What do I do if my Panda eats somehting other than bamboo?</dt>
             <dd>Do not fret. While pandas eat mostly bamboo, their digestive system is actually one of a carnivore, they simply chose the vegetarian life. If a Panda eats meat they will be perfectly fine (theoretically).</dd>
+        <br>
+        <dt>Should I tell my significant other that I bought a panda?</dt>
+            <dd>No. It's better to ask for forgiveness than permission. Eventually they will come around and accept the panda (theoretically) (make sure you have a prenup signed to protect yourself and the panda in the case of divorce). *We do not take responsibility for relationship problems caused by buying a panda.</dd>
         <br>
     </dl>
 </div>
