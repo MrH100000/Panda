@@ -369,3 +369,7 @@ nav.navbar {
     display: flex;
     align-items: center;
 }
+
+.cart-footer-form {
+    display: inline-block;
+}

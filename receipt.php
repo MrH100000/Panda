@@ -10,5 +10,6 @@ $cart = new Cart();
 $order = new Orders();
 $productList = $cart->getAll();
 $cartTotal = $cart->getTotalValue();
+$cart->clear();
 require_once __DIR__ . '/view/receipt.php';
 ?>

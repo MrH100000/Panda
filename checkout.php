@@ -21,7 +21,7 @@
             if($done===true)
             {
                 echo("success");
-                header('location: /receipt.php');
+                header('location: receipt.php');
                 exit;
             }
             

@@ -54,9 +54,9 @@ class Cart {
     }
 
     public function clear(){ 
-        unset($_SESSION['cart_products']); 
-        unset($_SESSION['cart_products_count']); 
-        unset($_SESSION['cart_products_total']); 
+        $_SESSION['cart_products'] = array();
+        $_SESSION['cart_products_total'] = 0;
+        $_SESSION['cart_products_count'] = 0;
     } 
 }
 ?>
