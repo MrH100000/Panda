@@ -262,19 +262,6 @@ nav.navbar {
     height: 100%;
 }
 
-.footer-content .logout-button {
-    width: 95px;
-    height: 35px;
-    border: none;
-    color: #000;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-.footer-content .logout-button:hover {
-    background-color: #cecece;
-}
-
 .login-area {
     display: flex;
     justify-content: center;
