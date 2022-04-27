@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if (!isset($_SESSION['type']) || !$_SESSION['type']===1) {
+    header('Location: login.php');
+    exit();
+}
 require_once __DIR__. '/model/products.php';
 require_once __DIR__. '/util/error_handling.php';
 $products = new Products();

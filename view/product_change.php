@@ -16,7 +16,7 @@
             <br>
             <input type="hidden" name="edit">
             <input type="hidden" name="id" value="<?php echo $product['ProductID']?>">
-            <input class="editButton" type="submit" value="Edit Item">
+            <input class="editButton" type="submit" value="Save Changes">
         </form>
         <form action="product_change.php" method="post">
             <input type="hidden" name="delete">

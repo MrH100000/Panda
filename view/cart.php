@@ -36,15 +36,19 @@
             </div>
             <div class="footer-right">
                 <?php if(isset($_SESSION['loggedIn'])): ?>
-                    <form action="checkout.php" method="get">
+                    <form action="checkout.php" method="get" class="cart-footer-form">
                         <input class="button" type="submit" value="Checkout">
                     </form>
                 <?php else: ?>
-                    <form action="login.php" method="get">
+                    <form action="login.php" method="get" class="cart-footer-form">
                         <input type="hidden" name="next" value="checkout">
                         <input class="button" type="submit" value="Log in to checkout">
                     </form>
                 <?php endif; ?>
+                <form action="cart.php" method="post" class="cart-footer-form">
+                    <input type="hidden" name="clear">
+                    <input class="button danger" type="submit" value="Clear cart">
+                </form>
             </div>
         </div>
     </div>
