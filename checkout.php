@@ -12,7 +12,7 @@
     $shippingCost = $orderCalculator->calcOrderShipping();
     $taxes = $orderCalculator->calcOrderTax();
     
-    if(isset($_POST['submit']))
+    if(isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zipCode']) && isset($_POST['country']))
     {
         $id=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total);
         if($id>0)
