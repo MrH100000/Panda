@@ -355,6 +355,14 @@ nav.navbar {
     background-color: #595959;
 }
 
+.cart-area .button.danger {
+    background-color: #ed6666;
+}
+
+.cart-area .button.danger:hover {
+    background-color: #b65757;
+}
+
 .cart-image {
     width: 70px;
     height: 70px;

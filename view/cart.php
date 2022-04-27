@@ -47,7 +47,7 @@
                 <?php endif; ?>
                 <form action="cart.php" method="post" class="cart-footer-form">
                     <input type="hidden" name="clear">
-                    <input class="button" type="submit" value="Clear cart">
+                    <input class="button danger" type="submit" value="Clear cart">
                 </form>
             </div>
         </div>
