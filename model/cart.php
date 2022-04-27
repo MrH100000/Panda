@@ -34,7 +34,7 @@ class Cart {
     }
 
     public function add($product, $quantity) {
-        $_SESSION['cart_products_total'] += $product['Price'];
+        $_SESSION['cart_products_total'] += $product['Price'] * $quantity;
         $_SESSION['cart_products_count'] += $quantity;
         if (isset($_SESSION['cart_products'][$product['ProductID']])) {
             $_SESSION['cart_products'][$product['ProductID']]['quantity'] += $quantity;
@@ -45,7 +45,7 @@ class Cart {
 
     public function delete($productId) {
         if (isset($_SESSION['cart_products'][$productId])) {
-            $_SESSION['cart_products_total'] -= $_SESSION['cart_products'][$productId]['product']['Price'];
+            $_SESSION['cart_products_total'] -= $_SESSION['cart_products'][$productId]['product']['Price'] * $_SESSION['cart_products'][$productId]['quantity'];
             $_SESSION['cart_products_count'] -= $_SESSION['cart_products'][$productId]['quantity'];
             unset($_SESSION['cart_products'][$productId]);
         } else {
