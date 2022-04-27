@@ -43,11 +43,13 @@
             </div>
             <hr/>
             <p>
-                <strong>Subtotal:</strong> $<?php echo number_format($subtotal);?>
+                <strong>Subtotal:</strong> $<?= number_format($subtotal);?>
                 <br>
-                <strong>Taxes:</strong> 10%
+                <strong>Taxes:</strong> $<?= number_format($taxes);?>
                 <br>
-                <strong>Total:</strong> $<?php echo number_format($total);?>
+                <strong>Shipping:</strong> $<?= number_format($shippingCost);?>
+                <br>
+                <strong>Total:</strong> $<?= number_format($total);?>
             </p>
             <hr/>
             <input class="button" type="submit" value="Checkout">

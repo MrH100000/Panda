@@ -94,14 +94,5 @@ class Orders extends Model {
         }
     }
 
-    public function getTotal($subtotal)
-    {
-        $tax=0.1;
-        $shippingCost=10000;
-        $total=($subtotal*$tax)+$subtotal;
-        $total=$total+$shippingCost;
-        return $total;
-    }
-
 }
 ?>
