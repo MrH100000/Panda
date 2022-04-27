@@ -8,12 +8,12 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total ) {
+    
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total, $shipping) {
         $id=$_SESSION['userID'];
         $date=date("F j, Y, g:i a");
-        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total)
-        VALUES ( :id, :street, :city, :state , :country, :zipCode, :paymentType, :date, :total)');
+        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total, ShippingCost)
+        VALUES ( :id, :street, :city, :state , :country, :zipCode, :paymentType, :date, :total, :shipping)');
         //try to add product
         try {
             //binds values while executing

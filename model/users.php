@@ -105,7 +105,7 @@ class Users extends Model {
         }
         return false;
     }
-    function clear()
+    public function clear()
     {
         unset($_SESSION['username']);
         unset($_SESSION['loggedIn']);
