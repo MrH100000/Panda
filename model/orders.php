@@ -1,6 +1,6 @@
 <?php
-require_once("database.php");
-require_once("Model.php");
+require_once(__DIR__ . "/database.php");
+require_once(__DIR__ . "/Model.php");
 class Orders extends Model {
     static $db = null;
 
@@ -9,14 +9,15 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-    public function addToOrder($street, $city, $state, $zipCode, $country, $paymentType )
+
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType )
     {
         //prepare sql statement to add to cart
-        $id=$_SESSION['userID'];
+        $id = $_SESSION['userID'];
         $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType)
         VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType)');
         //try to add product
-        try{
+        try {
             //binds values while executing
             $query->execute([
                     ':id' => $id,
@@ -27,20 +28,18 @@ class Orders extends Model {
                     ':zipCode' => $zipCode,
                     ':paymentType' => $paymentType
             ]);
-            //close query
-            $query->closeCursor();
             return true;
         //if it doesnt work, display error
-        }catch(PDOException $e) {
+        } catch(PDOException $e) {
             handle_error($e->getMessage());
-            exit();
         }
-        $query->closeCursor();
     }
 
     public function deleteOrder($id){
         try {
             $query = $this->DB()->prepare('DELETE FROM orders WHERE OrderID = ?');
+            $query->execute(array($id));
+            $query = $this->DB()->prepare('DELETE FROM order_products WHERE OrderID = ?');
             $query->execute(array($id));
             return true;
         } catch(PDOException $e) {
@@ -51,7 +50,7 @@ class Orders extends Model {
     public function searchByProduct($id)
     {
         try {
-            $query=$this->DB()->prepare('SELECT * FROM orders WHERE productID= ? order by orderID');
+            $query=$this->DB()->prepare('SELECT * FROM orders, order_products WHERE orders.OrderID = order_products.OrderID AND order_products.ProductID = ? ORDER BY OrderID');
             $query-> execute(array($id));
             return $query->fetchAll();
         } catch(PDOException $e) {

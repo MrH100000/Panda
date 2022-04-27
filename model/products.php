@@ -1,6 +1,6 @@
 <?php
-require_once("database.php");
-require_once("Model.php");
+require_once(__DIR__ . "/database.php");
+require_once(__DIR__ . "/Model.php");
 class Products extends Model {
     static $db = null;
 

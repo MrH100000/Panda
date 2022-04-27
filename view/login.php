@@ -2,11 +2,16 @@
 <?php if(isset($_SESSION['type']) && $_SESSION['type']===5): ?>
     <p> Registered successfully, Please log in: </p>
 <?php endif; ?>
-
+<?php if (isset($error_message)): ?>
+    <div class="errorMessage">
+        <strong>Error:</strong>
+        <?php echo $error_message; ?>
+    </div>
+<?php endif; ?>
 <div class="login-area">
     <div class="login-card">
         <h1>Login</h1>
-        <form action="login.php" method="post">
+        <form action="login.php<?= (isset($_GET['next']) && $_GET['next'] == "checkout") ? "?next=checkout" : "" ?>" method="post">
             <div class="login-fieldgroup">
                 <label class="login-label" for="username_field">Username:</label>
                 <input class="login-textfield" type="text" name="username" id="username_field" required>
@@ -39,16 +44,4 @@
         </form>
     </div>
 </div>
-
-
-
-
-
-
-<?php if (isset($error_message)): ?>
-    <div class="errorMessage">
-        <strong>Error:</strong>
-        <?php echo $error_message; ?>
-    </div>
-<?php endif; ?>
 <?php require_once __DIR__ . '/partials/footer.php'; ?>
