@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 }
 
-if(isset($_POST['logout'])) {
+if(isset($_GET['logout'])) {
     if(session_id()) {
         unset($_SESSION['username']);
         unset($_SESSION['loggedIn']);

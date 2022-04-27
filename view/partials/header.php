@@ -46,6 +46,11 @@ $cart = new Cart();
                             class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/edit_products.php')) { print('active'); } ?>"
                             href="edit_products.php">Edit Products</a></li>
                 <?php endif; ?>
+                <?php if(isset($_SESSION['loggedIn'])): ?>
+                    <li class="nav-item"><a
+                            class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/edit_products.php')) { print('active'); } ?>"
+                            href="login.php?logout">Logout</a></li>
+                <?php endif; ?> 
             </ul>
         </nav>
         <div class="main">
