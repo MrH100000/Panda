@@ -6,14 +6,20 @@
     $cart= new Cart();
     $subtotal=$cart->getTotalValue();
     $total=$orders->getTotal($subtotal);
+    $cartList=$cart->getAll();
     if(isset($_POST['submit']))
     {
-        $done=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total);
-        if($done===true)
+        $id=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total);
+        if($id>0)
         {
-            $_POST['submit']=false;
-            header('location: /receipt.php');
-            exit;
+            $done=$orders->addToOrder_Product($cartList, $id);
+            if($done===true)
+            {
+                $_POST['submit']=false;
+                header('location: /receipt.php');
+                exit;
+            }
+            
         }
         //if not then error message will show
         else
