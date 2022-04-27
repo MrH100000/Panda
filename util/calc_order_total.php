@@ -1,7 +1,8 @@
 <?php
 class OrderCalculator {
     private $subtotal;
-    protected $SHIPPING_FEE = 10000;
+    protected $SMALL_SHIPPING_FEE = 25;
+    protected $LARGE_SHIPPING_FEE = 10000;
     protected $TAX_RATE = 0.1;
 
     public function __construct($subtotal) {
@@ -9,7 +10,11 @@ class OrderCalculator {
     }
 
     public function calcOrderShipping() {
-        return $this->SHIPPING_FEE;
+        if ($this->subtotal > 10000) {
+            return $this->LARGE_SHIPPING_FEE;
+        } else {
+            return $this->SMALL_SHIPPING_FEE;
+        }
     }
 
     public function calcOrderTax() {
