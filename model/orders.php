@@ -9,7 +9,7 @@ class Orders extends Model {
         }
     }
     
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total, $shipping ) {
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total, $shipping) {
         $id=$_SESSION['userID'];
         $date=date("F j, Y, g:i a");
         $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total, ShippingCost)

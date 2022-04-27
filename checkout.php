@@ -14,13 +14,13 @@
     
     if(isset($_POST['submit']))
     {
-        $id=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total);
+        $id=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total, $shippingCost);
         if($id>0)
         {
             $done = $orders->addToOrder_Product($cart->getAll(), $id);
             if($done===true)
             {
-                $_POST['submit']=false;
+                echo("success");
                 header('location: /receipt.php');
                 exit;
             }
