@@ -9,12 +9,7 @@ $products = new Products();
 $cart = new Cart();
 $order = new Orders();
 $productList = $cart->getAll();
-<<<<<<< HEAD
 $orderInformation=$order->getOrderByID($order->getLastOrderID());
 //$cart->clear();
-=======
-$cartTotal = $cart->getTotalValue();
-$cart->clear();
->>>>>>> eeb06b02d0916ff9368a9154c9dfdd05ff5d3b41
 require_once __DIR__ . '/view/receipt.php';
 ?>
