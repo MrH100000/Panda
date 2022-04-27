@@ -9,13 +9,12 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType )
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total )
     {
         //prepare sql statement to add to cart
-        $id = $_SESSION['userID'];
-        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType)
-        VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType)');
+        $id=$_SESSION['userID'];
+        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType, Date, Total)
+        VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType, :date, :total)');
         //try to add product
         try {
             //binds values while executing
@@ -26,7 +25,9 @@ class Orders extends Model {
                     ':city' => $city,
                     ':country' => $country,
                     ':zipCode' => $zipCode,
-                    ':paymentType' => $paymentType
+                    ':paymentType' => $paymentType,
+                    ':date' => date("F j, Y, g:i a"),
+                    ':total' => $total
             ]);
             return true;
         //if it doesnt work, display error
@@ -67,6 +68,15 @@ class Orders extends Model {
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
+    }
+
+    public function getTotal($subtotal)
+    {
+        $tax=0.1;
+        $shippingCost=10000;
+        $total=($subtotal*$tax)+$subtotal;
+        $total=$total+$shippingCost;
+        return $total;
     }
 
 }
