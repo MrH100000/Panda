@@ -9,7 +9,7 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-    
+
     public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total ) {
         $id=$_SESSION['userID'];
         $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType, Date, Total)
@@ -67,15 +67,6 @@ class Orders extends Model {
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
-    }
-
-    public function getTotal($subtotal)
-    {
-        $tax=0.1;
-        $shippingCost=10000;
-        $total=($subtotal*$tax)+$subtotal;
-        $total=$total+$shippingCost;
-        return $total;
     }
 
 }
