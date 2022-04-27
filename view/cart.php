@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
 <div class="cart-area">
     <div class="cart-card">
+        <h1 class="card-heading">Cart</h1>
         <table class="cart-table">
             <thead>
                 <tr>
@@ -22,29 +23,31 @@
                             <form action="cart.php" method="post">
                                 <input type="hidden" name="product_id" value="<?= $product['product']["ProductID"] ?>">
                                 <input type="hidden" name="delete">
-                                <input type="submit" value="Delete">
+                                <input class="button" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <div class="cart-footer">
-            <strong>Total:</strong> <?= "$" . number_format($cartTotal); ?>
+        <div class="cart-footer footer-content">
+            <div class="footer-left">
+                <span><strong>Subtotal:</strong> <?= "$" . number_format($cartTotal); ?></span>
+            </div>
+            <div class="footer-right">
+                <?php if(isset($_SESSION['loggedIn'])): ?>
+                    <form action="checkout.php" method="post">
+                        <input class="button" type="submit" value="Checkout">
+                    </form>
+                <?php else: ?>
+                    <form action="login.php" method="get">
+                        <input type="hidden" name="next" value="checkout">
+                        <input class="button" type="submit" value="Log in to checkout">
+                    </form>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
-</div>
-<div class="cart-area">
-    <?php if(!isset($_SESSION['loggedIn'])): ?>
-        <button><a
-            class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/login')) { print('active'); } ?>"
-            href="login.php">Login to Checkout</a></button>
-    <?php endif; ?>
-    <?php if(isset($_SESSION['loggedIn'])): ?>
-        <button><a
-            class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/checkout')) { print('active'); } ?>"
-            href="checkout.php">Click to Checkout</a></button>
-    <?php endif; ?>
 </div>
 
 
