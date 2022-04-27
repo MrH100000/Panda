@@ -10,6 +10,6 @@ $cart = new Cart();
 $order = new Orders();
 $productList = $cart->getAll();
 $orderInformation=$order->getOrderByID($order->getLastOrderID());
-//$cart->clear();
+//$cart->clear(); -uncomment this when done formatting
 require_once __DIR__ . '/view/receipt.php';
 ?>
