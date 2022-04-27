@@ -34,6 +34,18 @@
         </div>
     </div>
 </div>
+<div class="cart-area">
+    <?php if(!isset($_SESSION['loggedIn'])): ?>
+        <button><a
+            class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/login')) { print('active'); } ?>"
+            href="login.php">Login to Checkout</a></button>
+    <?php endif; ?>
+    <?php if(isset($_SESSION['loggedIn'])): ?>
+        <button><a
+            class="<?php if (str_starts_with(strtolower($_SERVER['REQUEST_URI']), '/checkout')) { print('active'); } ?>"
+            href="checkout.php">Click to Checkout</a></button>
+    <?php endif; ?>
+</div>
 
 
 <?php require_once __DIR__ . '/partials/footer.php';?>

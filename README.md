@@ -5,7 +5,8 @@ need:
         David:
                 format login, register, edit_product view to look decent
         Danielle:
-                good question
+                -pull order information and product information to make reciept
+                -make checkout button after entering info to show a reciept 
                 
 
 ```
@@ -16,8 +17,8 @@ requirements:
         an example.)
     3. The store must have webpage(s) that show a list of your products including 
         pictures if applicable.
-!    4. The user must be able to select a product and quantity and add it to a cart.
-!    5. The user must be able to add multiple products to the cart.
+    4. The user must be able to select a product and quantity and add it to a cart.
+    5. The user must be able to add multiple products to the cart.
 !    6. The user must be able to checkout and complete a purchase.
 !    7. The system must be able to log the sales transaction into the database. 
         Remember you must save all the items purchased as well as the sales transaction.
