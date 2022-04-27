@@ -14,14 +14,14 @@
     
     if(isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['street']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zipCode']) && isset($_POST['country']))
     {
-        $id=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total, $shippingCost);
-        if($id>0)
+        $done=$orders->addOrder($_POST['street'], $_POST['city'], $_POST['state'], $_POST['zipCode'], $_POST['country'], $_POST['payment'], $total, $shippingCost, $taxes, $subtotal);
+        if($done===true)
         {
+            $id=$orders->getLastOrderID();
             $done = $orders->addToOrder_Product($cart->getAll(), $id);
             if($done===true)
             {
-                echo("success");
-                header('location: /receipt.php');
+                header('location: receipt.php');
                 exit;
             }
             
@@ -30,6 +30,7 @@
         else
         {
             $error_message = "Order cannot be placed";
+            exit;
         }
     }
     require_once __DIR__ . '/view/checkout.php'; 

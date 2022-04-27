@@ -20,8 +20,8 @@ requirements:
         pictures if applicable.
     4. The user must be able to select a product and quantity and add it to a cart.
     5. The user must be able to add multiple products to the cart.
-!    6. The user must be able to checkout and complete a purchase.
-!    7. The system must be able to log the sales transaction into the database. 
+    6. The user must be able to checkout and complete a purchase.
+    7. The system must be able to log the sales transaction into the database. 
         Remember you must save all the items purchased as well as the sales transaction.
     8. The user must be able to create an account for your site before making a 
         purchase.
@@ -30,7 +30,7 @@ requirements:
 !    10. The administrator of the site must be able to delete a sale.
     11. The webstore must provide navigation between pages using methods other than 
         the back button.
-!    12. The user must be able to get a receipt of his purchase which includes all 
+    12. The user must be able to get a receipt of his purchase which includes all 
         the items purchased and a total amount. The total must include sales tax and shipping charges.
 !    13. The administrator must be able to search sales by username and/or product.
     14. Structure the code using the MVC pattern.

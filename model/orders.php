@@ -9,11 +9,12 @@ class Orders extends Model {
         }
     }
     
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total, $shipping) {
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total, $shipping, $taxes, $subtotal) {
         $id=$_SESSION['userID'];
+        $username=$_SESSION['username'];
         $date=date("F j, Y, g:i a");
-        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total, ShippingCost)
-        VALUES ( :id, :street, :city, :state , :country, :zipCode, :paymentType, :date, :total, :shipping)');
+        $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total, ShippingCost, Tax, Subtotal, Username)
+        VALUES ( :id, :street, :city, :state , :country, :zipCode, :paymentType, :date, :total, :shipping, :taxes, :subtotal, :username)');
         //try to add product
         try {
             //binds values while executing
@@ -26,12 +27,31 @@ class Orders extends Model {
                     ':zipCode' => $zipCode,
                     ':paymentType' => $paymentType,
                     ':date' => $date,
-                    ':total' => $total
+                    ':total' => $total,
+                    ':shipping' => $shipping,
+                    ':taxes' => $taxes,
+                    ':subtotal' => $subtotal,
+                    ':username' => $username
             ]);
-            $query=$this->DB()->prepare('SELECT OrderID from orders where Date = :date');
-            $query->execute(array($date));
-            return $query->fetch()['OrderID'];
+            return true;
         //if it doesnt work, display error
+        } catch(PDOException $e) {
+            handle_error($e->getMessage());
+        }
+    }
+
+    public function getLastOrderID()
+    {
+        $query=$this->DB()->prepare('SELECT OrderID FROM orders ORDER BY OrderID DESC LIMIT 1');
+        $query->execute();
+        return $query->fetch()['OrderID'];
+    }
+
+    public function getOrderByID($id){
+        try {
+            $query = $this->DB()->prepare('SELECT * FROM orders WHERE OrderID = ?');
+            $query->execute(array($id));
+            return $query->fetch();
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }

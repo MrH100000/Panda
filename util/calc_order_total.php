@@ -1,7 +1,7 @@
 <?php
 class OrderCalculator {
     private $subtotal;
-    protected $SHIPPING_RATE = 0.1;
+    protected $SHIPPING_RATE = 0.15;
     protected $TAX_RATE = 0.1;
 
     public function __construct($subtotal) {
