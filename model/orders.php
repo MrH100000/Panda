@@ -9,12 +9,11 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total )
-    {
-        //prepare sql statement to add to cart
+    
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total ) {
         $id=$_SESSION['userID'];
         $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ShippingCost, ZipCode, PaymentType, Date, Total)
-        VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType, :date, :total)');
+            VALUES ( :id, :street, :city, :state , :country, 10000, :zipCode, :paymentType, :date, :total)');
         //try to add product
         try {
             //binds values while executing
