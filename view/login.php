@@ -9,14 +9,14 @@
     </div>
 <?php endif; ?>
 <div class="login-area">
-    <div class="login-card">
+    <div class="card small">
         <h1>Login</h1>
         <form action="login.php<?= (isset($_GET['next']) && $_GET['next'] == "checkout") ? "?next=checkout" : "" ?>" method="post">
-            <div class="login-fieldgroup">
+            <div class="form-fieldgroup">
                 <label class="login-label" for="username_field">Username:</label>
                 <input class="login-textfield" type="text" name="username" id="username_field" required>
             </div>
-            <div class="login-fieldgroup">
+            <div class="form-fieldgroup">
                 <label class="login-label" for="password_field">Password:</label>
                 <input class="login-textfield" type="password" name="password" id="password_field" required>
             </div>

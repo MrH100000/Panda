@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
 <div class="cart-area">
-    <div class="cart-card">
+    <div class="card large">
         <h1 class="card-heading">Cart</h1>
         <table class="cart-table">
             <thead>
@@ -36,7 +36,7 @@
             </div>
             <div class="footer-right">
                 <?php if(isset($_SESSION['loggedIn'])): ?>
-                    <form action="checkout.php" method="post">
+                    <form action="checkout.php" method="get">
                         <input class="button" type="submit" value="Checkout">
                     </form>
                 <?php else: ?>

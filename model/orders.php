@@ -8,9 +8,8 @@ class Orders extends Model {
             static::$db = getDatabase();
         }
     }
-    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total )
-    {
-        //prepare sql statement to add to cart
+    
+    public function addOrder($street, $city, $state, $zipCode, $country, $paymentType, $total ) {
         $id=$_SESSION['userID'];
         $date=date("F j, Y, g:i a");
         $query = $this->DB()->prepare('INSERT INTO orders (UserID, Address, City, State, Country, ZipCode, PaymentType, Date, Total)
