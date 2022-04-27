@@ -105,5 +105,14 @@ class Users extends Model {
         }
         return false;
     }
+    function clear()
+    {
+        unset($_SESSION['username']);
+        unset($_SESSION['loggedIn']);
+        unset($_SESSION['type']);
+        unset($_SESSION['firstName']);
+        unset($_SESSION['lastName']);
+        unset($_SESSION['userID']);
+    }
 }
 ?>

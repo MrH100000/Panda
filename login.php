@@ -1,7 +1,9 @@
 <?php
 session_start();
 require_once __DIR__. '/model/users.php';
+require_once __DIR__. '/model/cart.php';
 $users = new users();
+$cart=new Cart();
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -20,13 +22,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 if (isset($_GET['logout'])) {
     if(session_id()) {
-        unset($_SESSION['username']);
-        unset($_SESSION['loggedIn']);
-        unset($_SESSION['type']);
-        unset($_SESSION['firstName']);
-        unset($_SESSION['lastName']);
-        unset($_SESSION['userID']);
+        $user->clear();
         unset($user);
+        $cart->clear();
     }
     header('Location: index.php');
     exit();

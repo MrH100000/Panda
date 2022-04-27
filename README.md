@@ -4,6 +4,7 @@ very important panda project!
 need:
         David:
                 format login, register, edit_product view to look decent
+                when someone logs out the cart does not clear
         Danielle:
                 -pull order information and product information to make reciept
                 -make checkout button after entering info to show a reciept 
