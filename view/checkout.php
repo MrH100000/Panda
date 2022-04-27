@@ -1,4 +1,8 @@
 <?php require_once __DIR__ . '/partials/header.php'; ?>
+<div>
+    <h2>Subtotal: $<?php echo number_format($subtotal);?></h2>
+    <h2>Taxes: 10%</h2>
+    <h2>Total: $<?php echo number_format($total);?></h2>
     <form action="checkout.php" method="post">
     <label> Enter information: </label>
         <br>
@@ -34,4 +38,5 @@
         <br>
         <input type="submit" name="submit" value="Checkout">
     </form>
+</div>
 <?php require_once __DIR__ . '/partials/footer.php'; ?>
