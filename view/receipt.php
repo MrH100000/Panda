@@ -7,7 +7,7 @@
             <h3> Thanks you for your purchase </h3>
         </center>
         <div>
-            <strong> Shipping Information: </strong><br>
+            <strong>Shipping Information: </strong><br>
             <strong>Name: </strong> <?php echo $_SESSION['firstName'] ." ". $_SESSION['lastName'];?><br>
             <strong>Address:</strong> <?php echo $orderInformation['Address'];?><br>
             <label><?php echo $orderInformation['City'] . ', ' . $orderInformation['State'] ." ". $orderInformation['ZipCode'] . ', ' . $orderInformation['Country'];?></label><br>
