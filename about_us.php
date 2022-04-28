@@ -1,5 +1,4 @@
 <?php 
-session_start();
-//directs user to the about us view
+// Display the about page
 require_once __DIR__. '/view/about_us.php';
 ?>
