@@ -27,12 +27,12 @@ requirements:
         purchase.
     9. The administrator of the site must be able to add, edit and delete products 
         from the database.
-!    10. The administrator of the site must be able to delete a sale.
+    10. The administrator of the site must be able to delete a sale.
     11. The webstore must provide navigation between pages using methods other than 
         the back button.
     12. The user must be able to get a receipt of his purchase which includes all 
         the items purchased and a total amount. The total must include sales tax and shipping charges.
-!    13. The administrator must be able to search sales by username and/or product.
+    13. The administrator must be able to search sales by username and/or product.
     14. Structure the code using the MVC pattern.
 ```
     You may work in a group for this project, however there is no requirement that this should be done in a
