@@ -13,7 +13,7 @@ if (isset($_POST['delete']) && isset($_POST['id'])) {
     } else {
         $error_message = "Cannot delete order.";
     }
-}else if (isset($_GET['query'])) {
+}else if (isset($_GET['query']) && $_GET['query'] !== "") {
     $value=$_GET['query'];
     $choice=$_GET['type'];
     if($choice==='product')
