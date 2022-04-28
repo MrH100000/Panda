@@ -342,7 +342,7 @@ nav.navbar {
     width: 20%;
 }
 
-.cart-area .button {
+.button {
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
@@ -351,16 +351,30 @@ nav.navbar {
     cursor: pointer;
 }
 
-.cart-area .button:hover {
+.button:hover {
     background-color: #595959;
 }
 
-.cart-area .button.danger {
+.button.danger {
     background-color: #ed6666;
 }
 
-.cart-area .button.danger:hover {
+.button.danger:hover {
     background-color: #b65757;
+}
+
+.button.spacing {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+}
+
+.button.middle {
+    vertical-align: middle;
+}
+
+th.spacing {
+    padding-left: 10px;
 }
 
 .cart-image {
@@ -380,4 +394,12 @@ nav.navbar {
 
 .cart-footer-form {
     display: inline-block;
+}
+
+.search-type {
+    padding: 9px;
+}
+
+.search-field {
+    padding: 9px;
 }
