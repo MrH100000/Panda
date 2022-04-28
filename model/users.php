@@ -3,13 +3,13 @@ require_once("database.php");
 require_once("Model.php");
 class Users extends Model {
     static $db = null;
-
+    //default ocnstructor
     public function __construct() {
         if (static::$db === null) {
             static::$db = getDatabase();
         }
     }
-
+    //function to get all of the users in the database
     public function getAll() {
         try {
             return $this->DB()->query("SELECT * FROM users order by UserID")->fetchAll();
@@ -17,7 +17,7 @@ class Users extends Model {
             handle_error($e->getMessage());
         }
     }
-
+    //function to search for one user by ID, because why not
     public function getOne($id) {
         try {
             $query = $this->DB()->prepare('SELECT * FROM users WHERE UserID = ?');
@@ -28,9 +28,10 @@ class Users extends Model {
         }
     }
     //function to query for user with username and password
+    //used fo users to login
     public function getOneByUsernamePassword($username, $password) {
         try {
-            //ssql query to select user with given username and password
+            //sql query to select user with given username and password
             $query = $this->DB()->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
             $query->execute(array($username, $password));
             $userInfo= $query->fetch();
@@ -61,6 +62,8 @@ class Users extends Model {
             handle_error($e->getMessage());
         }
     }
+    //function to create user given their name, username, and password
+    //used for customers to register for an account
     public function createUser($firstName, $lastName, $username, $password )
     {
         //every new user will automatically not be an admin
@@ -105,6 +108,7 @@ class Users extends Model {
         }
         return false;
     }
+    //clear is used to unset everything in the session when a user pressed the logout button
     public function clear()
     {
         unset($_SESSION['username']);
