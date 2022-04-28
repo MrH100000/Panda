@@ -1,6 +1,6 @@
 # Panda
 
-very important panda project!
+very important panda project for a very important project for a very important class!
 
 
 ```
