@@ -124,7 +124,7 @@ class Orders extends Model {
 
     public function getAll() {
         try {
-            return $this->DB()->query("SELECT orders.*, users.username as Username FROM orders, users WHERE orders.UserID = users.UserID order by orderID")->fetchAll();
+            return $this->DB()->query("SELECT orders.*, users.username as Username FROM orders, users WHERE orders.UserID = users.UserID order by Date DESC")->fetchAll();
         } catch(PDOException $e) {
             handle_error($e->getMessage());
         }
