@@ -1,4 +1,5 @@
 <?php 
+//this controller is used by the register view and is used to display the registration page and handle adding  auser to the database. uses the user model
     session_start();
     require_once __DIR__. '/model/users.php';
     $users = new users();

@@ -1,4 +1,5 @@
 <?php 
+//this controller is used for the all_order view to display all of the orders in the database for the admin and uses the orders model
 session_start();
 require_once __DIR__. '/model/orders.php';
 require_once __DIR__. '/util/error_handling.php';

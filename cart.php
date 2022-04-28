@@ -1,4 +1,5 @@
 <?php
+//this controller is used for the cart view and uses the cart and products models to show the products the customer added to the cart
 require_once __DIR__. '/model/cart.php';
 require_once __DIR__. '/model/products.php';
 require_once __DIR__. '/util/error_handling.php';

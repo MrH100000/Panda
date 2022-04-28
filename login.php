@@ -1,4 +1,5 @@
 <?php
+//this controller is used for the login view and uses the users model
 session_start();
 require_once __DIR__. '/model/users.php';
 // Load the users model

@@ -1,4 +1,5 @@
 <?php 
+//this controller is used for the product page which displays individual products after they are selected and ses the products and cart model
 session_start();
 // Include the necessary models
 require_once __DIR__. '/util/error_handling.php';
