@@ -11,21 +11,21 @@
     <h2> Frequently asked Questions: </h2>
     <dl>
         <dt>How long does shipping take?</dt>
-            <dd>Well, if you ordered a Panda of any type, it will take as long as it takes</dd>
+            <dd>Well, if you ordered a Panda of any type, it will take as long as it takes.</dd>
         <br>
-        <dt>Do your Panda's come from China or Mexico?</dt>
+        <dt>Do your pandas come from China or Mexico?</dt>
             <dd>Well, if you are buying a Panda now, it will come from China. On the rare chance Mexico has a new baby panda, we will offer panda's from Mexico</dd>
         <br>
         <dt>How much time do pandas spend eating?</dt>
             <dd>Giant pandas typically will spend 10-16 hours of their day eating, just like me</dd>
         <br>
         <dt>What do pandas eat?</dt>
-            <dd>Bamboo. Duh. But, you need to have two different varieties of bamboo on hand. Panda's require variety in order to get the proper nutrients.</dd>
+            <dd>Bamboo. Duh. But, you need to have two different varieties of bamboo on hand. Pandas require variety in order to get the proper nutrients.</dd>
         <br>
-        <dt>Do you sell a variety of Bamboo?</dt>
-            <dd>As you learned above, panda's require a variety of bamboo to stay healthy. Our bamboo bundles are crafted with a variety of bamboo types. This makes your life easier because you don't have to worry about whether you panda is getting a good variety or not.</dd>
+        <dt>Do you sell a variety of bamboo?</dt>
+            <dd>As you learned above, pandas require a variety of bamboo to stay healthy. Our bamboo bundles are crafted with a variety of bamboo types. This makes your life easier because you don't have to worry about whether you panda is getting a good variety or not.</dd>
         <br>
-        <dt>What do I do if my Panda eats somehting other than bamboo?</dt>
+        <dt>What do I do if my panda eats something other than bamboo?</dt>
             <dd>Do not fret. While pandas eat mostly bamboo, their digestive system is actually one of a carnivore, they simply chose the vegetarian life. If a Panda eats meat they will be perfectly fine (theoretically).</dd>
         <br>
         <dt>Should I tell my significant other that I bought a panda?</dt>
